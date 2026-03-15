@@ -37,9 +37,6 @@
 ![系统演示](images/demo.png)
 ---
 
-# 🛠️ 使用方法
-
-![系统演示](images/demo.png)
 
 ---
 
@@ -94,9 +91,7 @@ streamlit run app.py
 ```
 http://localhost:8501
 ```
-
 ---
-
 
 ## 4️⃣ 使用步骤
 
@@ -107,6 +102,10 @@ http://localhost:8501
 3️⃣ 在聊天框输入问题
 
 4️⃣ 系统会返回答案并展示相关论文段落
+
+在运行完毕后，应看到如下页面：
+
+![系统演示](images/demo.png)
 
 ---
 
