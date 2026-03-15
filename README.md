@@ -5,6 +5,10 @@
 
 该项目展示了一个完整的 **RAG 应用流程**：文档加载 → 文本切分 → 向量检索 → Reranker排序 → 大模型生成回答。
 
+！[流程图](https://imgur.com/4TAOiLW)
+
+![项目截图](https://imgur.com/a/THsBFHP)
+
 ---
 
 # 🚀 功能介绍
