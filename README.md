@@ -39,6 +39,12 @@
 
 # 🛠️ 使用方法
 
+![系统演示](images/demo.png)
+
+---
+
+# 🛠️ 使用方法
+
 ## 1️⃣ 安装依赖
 
 在项目目录中运行：
@@ -49,7 +55,33 @@ pip install -r requirements.txt
 
 ---
 
-## 2️⃣ 启动系统
+## 2️⃣ 配置 OpenAI API Key
+
+在运行系统之前，需要先配置 **OPENAI_API_KEY** 环境变量，否则系统无法调用大语言模型接口。
+
+### Windows（PowerShell）
+
+```
+$env:OPENAI_API_KEY="你的OpenAI_API_Key"
+```
+
+### Windows（CMD）
+
+```
+set OPENAI_API_KEY=你的OpenAI_API_Key
+```
+
+### Mac / Linux
+
+```
+export OPENAI_API_KEY="你的OpenAI_API_Key"
+```
+
+配置完成后再启动系统。
+
+---
+
+## 3️⃣ 启动系统
 
 运行：
 
@@ -65,7 +97,8 @@ http://localhost:8501
 
 ---
 
-## 3️⃣ 使用步骤
+
+## 4️⃣ 使用步骤
 
 1️⃣ 上传论文 PDF 文件
 
