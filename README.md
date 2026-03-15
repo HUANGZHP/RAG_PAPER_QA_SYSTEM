@@ -180,4 +180,9 @@ RAG 系统核心逻辑，包括：
 * 调用大语言模型生成最终回答
 
 ---
- 构建自己的论文问答助手
+### 贡献与交流
+- 如果你发现Bug或有新需求，欢迎提 [Issue](https://github.com/HUANGZHP/RAG_PAPER_QA_SYSTEM/issues)
+- 欢迎Fork本仓库，提交 [Pull Request](https://github.com/HUANGZHP/RAG_PAPER_QA_SYSTEM/pulls) 参与代码贡献
+
+### 许可证
+本项目基于 [MIT License](LICENSE) 开源，可自由使用、修改和分发。
