@@ -5,9 +5,7 @@
 
 该项目展示了一个完整的 **RAG 应用流程**：文档加载 → 文本切分 → 向量检索 → Reranker排序 → 大模型生成回答。
 
-！[流程图](https://imgur.com/4TAOiLW)
-
-![项目截图](https://imgur.com/a/THsBFHP)
+![流程图](images/architecture.png)
 
 ---
 
@@ -36,6 +34,10 @@
 📑 **引用论文原文段落**
 系统会展示回答所参考的论文段落来源。
 
+![系统演示](images/demo.png)
+---
+
+
 ---
 
 # 🛠️ 使用方法
@@ -50,7 +52,33 @@ pip install -r requirements.txt
 
 ---
 
-## 2️⃣ 启动系统
+## 2️⃣ 配置 OpenAI API Key
+
+在运行系统之前，需要先配置 **OPENAI_API_KEY** 环境变量，否则系统无法调用大语言模型接口。
+
+### Windows（PowerShell）
+
+```
+$env:OPENAI_API_KEY="你的OpenAI_API_Key"
+```
+
+### Windows（CMD）
+
+```
+set OPENAI_API_KEY=你的OpenAI_API_Key
+```
+
+### Mac / Linux
+
+```
+export OPENAI_API_KEY="你的OpenAI_API_Key"
+```
+
+配置完成后再启动系统。
+
+---
+
+## 3️⃣ 启动系统
 
 运行：
 
@@ -63,10 +91,9 @@ streamlit run app.py
 ```
 http://localhost:8501
 ```
-
 ---
 
-## 3️⃣ 使用步骤
+## 4️⃣ 使用步骤
 
 1️⃣ 上传论文 PDF 文件
 
@@ -75,6 +102,10 @@ http://localhost:8501
 3️⃣ 在聊天框输入问题
 
 4️⃣ 系统会返回答案并展示相关论文段落
+
+在运行完毕后，应看到如下页面：
+
+![系统演示](images/demo.png)
 
 ---
 
@@ -181,4 +212,9 @@ RAG 系统核心逻辑，包括：
 * 调用大语言模型生成最终回答
 
 ---
- 构建自己的论文问答助手
+### 贡献与交流
+- 如果你发现Bug或有新需求，欢迎提 [Issue](https://github.com/HUANGZHP/RAG_PAPER_QA_SYSTEM/issues)
+- 欢迎Fork本仓库，提交 [Pull Request](https://github.com/HUANGZHP/RAG_PAPER_QA_SYSTEM/pulls) 参与代码贡献
+
+### 许可证
+本项目基于 [MIT License](LICENSE) 开源，可自由使用、修改和分发。
