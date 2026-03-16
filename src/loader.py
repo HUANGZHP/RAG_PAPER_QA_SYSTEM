@@ -1,21 +1,26 @@
-import os
 from langchain_community.document_loaders import PyPDFLoader
+from src.paper_structure import detect_section
+import os
 
-def load_documents(data_path="data"):
 
-    documents = []
+def load_documents():
 
-    for file in os.listdir(data_path):
+    docs = []
+
+    for file in os.listdir("data"):
 
         if file.endswith(".pdf"):
 
-            loader = PyPDFLoader(os.path.join(data_path, file))
+            loader = PyPDFLoader(os.path.join("data", file))
 
-            docs = loader.load()
+            pages = loader.load()
 
-            for d in docs:
-                d.metadata["source"] = file
+            for page in pages:
 
-            documents.extend(docs)
+                section = detect_section(page.page_content)
 
-    return documents
+                page.metadata["section"] = section
+
+                docs.append(page)
+
+    return docs

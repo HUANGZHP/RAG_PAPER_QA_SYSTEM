@@ -20,7 +20,8 @@ def generate_answer(query, vectordb, chat_history):
 
         retrieved_chunks.append({
             "text": doc.page_content,
-            "source": doc.metadata.get("source")
+            "source": doc.metadata.get("source"),
+            "section": doc.metadata.get("section")
         })
 
     history_text = ""
@@ -35,21 +36,26 @@ def generate_answer(query, vectordb, chat_history):
             history_text += f"助手: {content}\n"
 
     prompt = f"""
-你是一个论文阅读助手。
+    你是一位学术论文阅读助手，帮助用户理解论文内容。
 
-以下是之前的对话记录：
-{history_text}
+    回答问题时请遵循以下原则：
 
-请根据论文内容回答用户的问题。
+    1. 使用严谨、学术化的表达
+    2. 如果问题涉及方法，请解释核心思想
+    3. 如果涉及实验，请说明实验目的与结果
+    4. 如果涉及论文贡献，请总结关键创新点
 
-论文内容：
-{context}
+    论文上下文：
+    {context}
 
-当前问题：
-{query}
+    历史对话：
+    {history_text}
 
-请用中文回答。
-"""
+    用户问题：
+    {query}
+
+    请用中文回答，并尽量结构化表达。
+    """
 
     llm = ChatOpenAI(temperature=0)
 
